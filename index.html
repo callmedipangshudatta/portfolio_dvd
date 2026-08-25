@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Dipangshu Datta — Java Developer</title>
+</head>
+<body>
+    
+    <!-- Pragmatic Map / Data Stream Tracker -->
+    <div class="scroll-tracker" id="scrollTracker"></div>
+
+    <!-- Futuristic Interactive Canvas -->
+    <canvas id="tech-canvas"></canvas>
+    <div id="mouse-glow"></div>
+
+    <!-- ══ HEADER ══ -->
+    <header id="header">
+        <a href="#home" class="logo">
+            <span class="logo-text">DD</span>
+        </a>
+        <nav id="navbar">
+            <a href="#home"     class="nav-link active">Home</a>
+            <a href="#ethos"    class="nav-link">Ethos</a>
+            <a href="#skills"   class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact"  class="nav-link">Contact</a>
+        </nav>
+        <div class="header-right">
+            <a href="mailto:infoforddatta@gmail.com" class="hire-btn">Work with Me</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ══ HOME ══ -->
+    <section class="home" id="home">
+        <div class="home-content reveal">
+            <div class="available-badge">
+                <span class="pulse-dot"></span>
+                Available for Backend Roles
+            </div>
+            
+            <h1>Hi, I'm <span class="name-highlight">Dipangshu Datta.</span></h1>
+            
+            <div class="typing-row">
+                <span class="typing-label">Currently </span>
+                <span class="typing-word" id="typingWord"></span><span class="cursor-bar">|</span>
+            </div>
+            
+            <p>I am a developer focused on Java and backend systems. I don't wait for permission or titles to start building. Every day is an opportunity to break down complex system designs, write cleaner code, and push commits that turn theory into functional reality.</p>
+            
+            <div class="stats-row">
+                <div class="stat"><strong>1</strong><small>Shipped Projects</small></div>
+                <div class="divider-line"></div>
+                <div class="stat"><strong>100+</strong><small>DSA Solved</small></div>
+                <div class="divider-line"></div>
+                <div class="stat"><strong>Daily</strong><small>GitHub Commits</small></div>
+            </div>
+            
+            <div class="cta-buttons">
+                
+                
+                <a href="https://github.com/callmedipangshudatta" target="_blank" class="btn btn-github"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://leetcode.com/u/DipangshuDatta09/" target="_blank" class="btn btn-leetcode"><i class="fa-solid fa-code"></i> LeetCode</a>
+                <a href="https://www.linkedin.com/in/dipangshu-datta/" target="_blank" class="btn btn-linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <!-- Resume Button -->
+                <a href="F:\Dipangshu_Datta_Portfolio\Dipangshu_Datta_Resume.pdf" target="_blank" class="btn btn-resume"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+            </div>
+        </div>
+        <div class="home-img reveal reveal-right">
+            <div class="img-wrapper">
+                <svg class="wheel-ring" viewBox="0 0 400 400" aria-hidden="true">
+                    <circle cx="200" cy="200" r="192" fill="none" stroke="rgba(255, 215, 0, 0.3)" stroke-width="1"/>
+                    <g id="wheelSpokes" stroke="rgba(0, 229, 255, 0.4)" stroke-width="1.5" stroke-linecap="round"></g>
+                </svg>
+                <img src="F:\Dipangshu_Datta_Portfolio\dipangshu_datta_image_1.png" alt="Dipangshu Datta">
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ ETHOS & PHILOSOPHY ══ -->
+    <section class="section" id="ethos">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-tag">The Mindset</span>
+                <h2>Pragmatic <span class="highlight-gold">Building</span></h2>
+                <p>I believe in transparency. I don't pretend to be a senior engineer; I operate as a dedicated learner with a founder's hunger to execute.</p>
+            </div>
+
+            <!-- Mahabharat Philosophy Block -->
+            <div class="philosophy-block reveal">
+                <div class="sanskrit-text">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन</div>
+                <div class="english-translation">"You have a right to perform your prescribed duty, but you are not entitled to the fruits of action."<br><span>— Bhagavad Gita (2.47)</span></div>
+                <div class="philosophy-context">
+                    <strong>Why this line?</strong> What I have seen - In engineering and startups, obsessing over the outcome - a specific title, a prestigious internship, or quick recognition - distracts from the execution. My duty is the craft: writing optimized code, understanding data flow, and building systems daily. The outcome is secondary; the work is absolute.
+                </div>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon teal"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Backend Architecture</h3>
+                    <p>Learning how robust systems are built. Moving beyond simple syntax to truly understand database integration, API constraints, and how logic scales under the hood.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon gold"><i class="fa-solid fa-code"></i></div>
+                    <h3>Algorithmic Discipline</h3>
+                    <p>Over 100 DSA problems solved in C++. I focus on the fundamentals—arrays, pointers, time-space complexity—so the systems I build are logically sound from day one.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon teal"><i class="fa-brands fa-github"></i></div>
+                    <h3>Proof of Work</h3>
+                    <p>Every line of code I write is pushed to GitHub. I believe a public track record of daily consistency speaks louder than inflated claims on a resume.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ SKILLS ══ -->
+    <section class="section section-alt" id="skills">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-tag">Tech Stack</span>
+                <h2>Honest <span class="highlight-teal">Capabilities</span></h2>
+                <p>No invented progress bars. Here is exactly what I build with today, and the technologies I am currently focused on mastering.</p>
+            </div>
+            <div class="skills-wrapper">
+                <div class="skills-column reveal">
+                    <h3 class="skills-cat"><i class="fa-solid fa-check-circle"></i> Core Foundations</h3>
+                    <ul class="clean-list">
+                        <li><strong>Java</strong> — My primary language for backend logic and object-oriented design.</li>
+                        <li><strong>C++</strong> — Used strictly to sharpen my algorithmic problem-solving (DSA).</li>
+                        <li><strong>SQL</strong> — Comfortable writing queries and understanding relational data.</li>
+                        <li><strong>HTML & CSS</strong> — Proficient enough to build clean, responsive interfaces like this site.</li>
+                        <li><strong>Git & GitHub</strong> — Comfortable tracking version history and managing daily commits.</li>
+                    </ul>
+                </div>
+                <div class="skills-column reveal">
+                    <h3 class="skills-cat"><i class="fa-solid fa-bolt"></i> Current Focus</h3>
+                    <ul class="clean-list">
+                        <li><strong>Spring Boot</strong> — Transitioning from core Java to building functional REST APIs.</li>
+                        <li><strong>PostgreSQL</strong> — Integrating and modeling data for robust backend storage.</li>
+                        <li><strong>System Design</strong> — Studying how modern, scalable applications are architected.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ PROJECTS ══ -->
+    <section class="section" id="projects">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-tag">Proof of Work</span>
+                <h2>What I'm <span class="highlight-gold">Building</span></h2>
+                <p>Turning documentation into deployed code.</p>
+            </div>
+            <div class="projects-grid">
+                
+                <!-- Project 1: ZenFlow -->
+                <div class="project-card reveal wip-card">
+                    <div class="project-top">
+                        <div class="project-icon teal"><i class="fa-solid fa-wallet"></i></div>
+                        <div class="project-links">
+                            <div class="wip-badge"><i class="fa-solid fa-spinner fa-spin"></i> In Progress</div>
+                            <a href="https://github.com/callmedipangshudatta/expense-tracker-api" target="_blank" class="card-gh-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                    <h3>ZenFlow (Expense Tracker)</h3>
+                    <p>My major foray into Spring Boot. I am building the backend for a finance tracker to automate cash-flow analysis. Setting up REST APIs and integrating PostgreSQL for reliable, structured data storage.</p>
+                    
+                    <div class="tech-tree">
+                        <div class="tree-root"><i class="fa-solid fa-code-branch"></i> Architecture Stack</div>
+                        <div class="tree-branches">
+                            <div class="tree-node">Java</div>
+                            <div class="tree-node">Spring Boot</div>
+                            <div class="tree-node">PostgreSQL</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="projects-cta reveal">
+                <a href="https://github.com/callmedipangshudatta" target="_blank" class="btn btn-filled">
+                    <i class="fa-brands fa-github"></i> View My Daily Commits
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ CONTACT ══ -->
+    <section class="section section-alt" id="contact">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-tag">Let's Connect</span>
+                <h2>Contact <span class="highlight-teal">Me</span></h2>
+                <p>If you're a founder or recruiter looking for a driven developer ready to learn, adapt, and execute, my inbox is open.</p>
+            </div>
+            <div class="contact-wrapper contact-single">
+                <div class="contact-info reveal">
+                    
+                    <div class="contact-item email-box">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-text-box">
+                            <strong>Email</strong>
+                            <a href="mailto:infoforddatta@gmail.com">infoforddatta@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item linkedin-box">
+                        <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+                        <div class="contact-text-box">
+                            <strong>LinkedIn</strong>
+                            <a href="https://www.linkedin.com/in/dipangshu-datta/" target="_blank">dipangshu-datta</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item twitter-box">
+                        <div class="contact-icon"><i class="fa-brands fa-x-twitter"></i></div>
+                        <div class="contact-text-box">
+                            <strong>Twitter / X</strong>
+                            <a href="https://x.com/justdipangshu" target="_blank">@justdipangshu</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ THE FINAL ANCHOR (KRISHNA) ══ -->
+    <section class="section" id="anchor">
+        <div class="section-container">
+            <div class="anchor-wrapper">
+                <div class="anchor-text reveal">
+                    <div class="sanskrit-text-large">उद्धरेदात्मनात्मानं नात्मानमवसादयेत्</div>
+                    <div class="english-translation">
+                        "Elevate yourself through the power of your own mind, and do not degrade yourself. For the mind can be your greatest friend, and also your greatest enemy."<br>
+                        <span>— Bhagavad Gita (6.5)</span>
+                    </div>
+                    <div class="philosophy-context">
+                        <strong>The Architect's Truth:</strong> At the end of the day, all code, all systems, and all growth stem from discipline. We are the architects of our own progress. We choose to build, to learn, and to elevate.
+                    </div>
+                </div>
+                <div class="anchor-image reveal reveal-right">
+                    <div class="image-glow"></div>
+                    <img src="krishna ji wallpaper 2.jpg" alt="Shri Krishna">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer>
+        <p>Built by Dipangshu Datta · Truth Alone Triumphs</p>
+        <div class="footer-links">
+            <a href="https://github.com/callmedipangshudatta" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/dipangshu-datta/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://x.com/justdipangshu" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
