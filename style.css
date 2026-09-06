@@ -259,6 +259,131 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
 .btn-filled:hover { background: var(--teal); box-shadow: 0 0 15px var(--teal-dim);}
 
 /* ════════════════════════════════
+   GITHUB ACTIVITY CARD ENHANCEMENTS
+════════════════════════════════ */
+.github-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    border-radius: 1.2rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.github-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 229, 255, 0.15), 0 0 20px rgba(0, 229, 255, 0.3);
+}
+
+.github-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.github-user-info {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.github-live-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.stat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+}
+
+.stat-pill.highlight-pill {
+    background: rgba(0, 229, 255, 0.08);
+    border-color: rgba(0, 229, 255, 0.25);
+    color: var(--teal);
+}
+
+.contrib-graph-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.contrib-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.2));
+}
+
+.github-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.view-profile-link {
+    color: var(--gold);
+    transition: 0.2s;
+}
+
+.view-profile-link:hover {
+    color: #fff;
+    text-shadow: 0 0 8px var(--gold-dim);
+}
+
+@media (max-width: 768px) {
+    .github-card-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ════════════════════════════════
+   GITHUB STATS ROW WIDGET
+════════════════════════════════ */
+.github-stats-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 0 0;
+    border-top: 1px solid var(--glass-border);
+}
+
+.streak-card-img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.streak-card-img:hover {
+    transform: scale(1.01);
+}
+
+/* ════════════════════════════════
    CONTACT (SPECIFIC BRAND COLORS)
 ════════════════════════════════ */
 .contact-wrapper { max-width: 600px; }
