@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ════════════════════════════════
-   RESET & VARIABLES (HIGH CONTRAST & PEACOCK GLOW)
+    RESET & VARIABLES (HIGH CONTRAST & PEACOCK GLOW)
 ════════════════════════════════ */
 * { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; border: none; outline: none; }
 
@@ -34,7 +34,7 @@ body {
 }
 
 /* ════════════════════════════════
-   GLOBAL READABILITY FIXES (ANTI-BLINDNESS)
+    GLOBAL READABILITY FIXES (ANTI-BLINDNESS)
 ════════════════════════════════ */
 h1, h2, h3, p, li, strong, a, .logo-text, .section-tag, .sanskrit-text {
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
@@ -52,7 +52,7 @@ h1, h2, h3, .logo-text { font-family: 'Playfair Display', serif; letter-spacing:
 p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400; }
 
 /* ════════════════════════════════
-   SCROLL TRACKER (THE MAP LINE)
+    SCROLL TRACKER (THE MAP LINE)
 ════════════════════════════════ */
 .scroll-tracker {
     position: fixed;
@@ -68,7 +68,7 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
 }
 
 /* ════════════════════════════════
-   COSMIC MANDALA (THE KARMA WHEEL)
+    COSMIC MANDALA (THE KARMA WHEEL)
 ════════════════════════════════ */
 .cosmic-mandala {
     position: fixed; top: 50%; left: 50%; width: 120vw; height: 120vw;
@@ -86,7 +86,7 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
 }
 
 /* ════════════════════════════════
-   FUTURISTIC CANVAS & CURSOR GLOW
+    FUTURISTIC CANVAS & CURSOR GLOW
 ════════════════════════════════ */
 #tech-canvas { position: fixed; inset: 0; pointer-events: none; background: radial-gradient(circle at center, #0B1120 0%, transparent 100%); }
 #mouse-glow {
@@ -96,13 +96,13 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
     transform: translate(-50%, -50%); transition: opacity 0.4s ease; opacity: 0;
 }
 
-.clean-list li { font-size: 1.6rem; color: var(--muted); line-height: 1.7; padding-left: 2.4rem; position: relative; font-weight: 400; }
+.clean-list li { font-size: 1.6rem; color: var(--muted); line-height: 1.7; padding-left: 2.4rem; position: relative; font-weight: 400; margin-bottom: 1rem; }
 .clean-list li strong { color: var(--text); font-weight: 600; letter-spacing: 0.03rem; }
 .philosophy-context { font-size: 1.6rem; color: var(--muted); line-height: 1.8; font-weight: 400; border-top: 1px solid var(--glass-border); padding-top: 2rem; }
 .english-translation { font-size: 2rem; color: #fff; font-family: 'Playfair Display', serif; font-style: italic; margin-bottom: 2.5rem; }
 
 /* ════════════════════════════════
-   HEADER
+    HEADER
 ════════════════════════════════ */
 #header {
     position: fixed; top:0; left:0; width:100%; height: var(--header-h); padding: 0 9%;
@@ -131,7 +131,7 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
 .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
 
 /* ════════════════════════════════
-   HOME
+    HOME
 ════════════════════════════════ */
 .home { min-height:100vh; padding: calc(var(--header-h) + 6rem) 9% 6rem; display:flex; justify-content:space-between; align-items:center; gap:8rem; position:relative; }
 .home-content { max-width:600px; display:flex; flex-direction:column; gap:2.4rem; }
@@ -178,7 +178,7 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
 .img-wrapper img:hover { filter: grayscale(0%); border-color: var(--teal); box-shadow: 0 0 30px var(--teal-dim); }
 
 /* ════════════════════════════════
-   SECTION BASE
+    SECTION BASE
 ════════════════════════════════ */
 .section { padding:10rem 0; position:relative; }
 .section-alt { background:var(--dark2); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);}
@@ -191,7 +191,7 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
 .highlight-teal  { color:var(--teal); font-style: italic;}
 
 /* ════════════════════════════════
-   PHILOSOPHY BLOCK
+    PHILOSOPHY BLOCK
 ════════════════════════════════ */
 .philosophy-block {
     background: linear-gradient(145deg, rgba(13, 19, 33, 0.4), rgba(3, 6, 16, 0.8));
@@ -205,7 +205,7 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
 .philosophy-context strong { color: #fff; font-weight: 500; }
 
 /* ════════════════════════════════
-   SERVICES (GLOWING CARDS)
+    SERVICES (GLOWING CARDS)
 ════════════════════════════════ */
 .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2.4rem; }
 .service-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 1.2rem; padding: 3.5rem 2.5rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); backdrop-filter: blur(12px); overflow: hidden; }
@@ -217,14 +217,14 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
 .service-card p  { font-size:1.5rem; color:var(--muted); line-height:1.7; font-weight: 300; }
 
 /* ════════════════════════════════
-   SKILLS
+    SKILLS
 ════════════════════════════════ */
 .skills-wrapper { display:grid; grid-template-columns:1fr 1fr; gap:6rem; }
 .skills-cat { font-size:2.2rem; font-weight:400; color:#fff; margin-bottom:2.4rem; display:flex; align-items:center; gap:1.2rem; }
 .skills-cat i { color:var(--muted); font-size: 1.8rem; }
 
 /* ════════════════════════════════
-   PROJECTS (GLOWING CARDS)
+    PROJECTS (GLOWING CARDS)
 ════════════════════════════════ */
 .projects-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:3rem; margin-bottom:5rem; }
 .project-card { background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(12px); border-radius: 1.2rem; padding: 3rem; display: flex; flex-direction: column; gap: 1.6rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
@@ -259,7 +259,7 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
 .btn-filled:hover { background: var(--teal); box-shadow: 0 0 15px var(--teal-dim);}
 
 /* ════════════════════════════════
-   GITHUB ACTIVITY CARD ENHANCEMENTS
+    GITHUB CONTRIBUTION ACTIVITY ENHANCEMENTS
 ════════════════════════════════ */
 .github-card {
     background: var(--glass-bg);
@@ -362,7 +362,7 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
 }
 
 /* ════════════════════════════════
-   GITHUB STATS ROW WIDGET
+    GITHUB STATS ROW WIDGET
 ════════════════════════════════ */
 .github-stats-row {
     width: 100%;
@@ -384,7 +384,7 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
 }
 
 /* ════════════════════════════════
-   CONTACT (SPECIFIC BRAND COLORS)
+    CONTACT (SPECIFIC BRAND COLORS)
 ════════════════════════════════ */
 .contact-wrapper { max-width: 600px; }
 .contact-info    { display:flex; flex-direction:column; gap:1.6rem; }
@@ -425,81 +425,7 @@ p { font-size: 1.65rem; color: var(--muted); line-height: 1.8; font-weight: 400;
 .contact-item.twitter-box:hover .contact-text-box a { color: #FFFFFF; }
 
 /* ════════════════════════════════
-   FINAL ANCHOR (KRISHNA)
-════════════════════════════════ */
-.anchor-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 6rem;
-    background: linear-gradient(145deg, rgba(13, 19, 33, 0.4), rgba(3, 6, 16, 0.8));
-    border: 1px solid var(--glass-border);
-    border-right: 4px solid var(--gold); /* Golden edge to signify completion */
-    border-radius: 1.2rem;
-    padding: 5rem;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-    position: relative;
-    z-index: 20;
-}
-
-.anchor-text {
-    flex: 1;
-}
-
-.sanskrit-text-large {
-    font-size: 3.4rem;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-    text-shadow: 0 0 20px var(--gold-dim);
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.anchor-image {
-    position: relative;
-    flex-shrink: 0;
-    width: 34rem;
-    height: 42rem;
-}
-
-.anchor-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    z-index: 2;
-    border-radius: 1.2rem;
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.anchor-image img:hover {
-    border-color: var(--gold);
-    box-shadow: 0 0 50px rgba(255, 215, 0, 0.4);
-    transform: scale(1.03);
-}
-
-.image-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 120%;
-    height: 120%;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 60%);
-    z-index: 1;
-    pointer-events: none;
-    animation: slowPulse 4s infinite alternate;
-}
-
-@keyframes slowPulse {
-    0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.7; }
-    100% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
-}
-
-/* ════════════════════════════════
-   FOOTER & RESPONSIVE
+    FOOTER & RESPONSIVE
 ════════════════════════════════ */
 footer { padding:3rem 9%; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--glass-border); flex-wrap:wrap; gap:1.4rem; background: var(--dark); position: relative; z-index: 10; }
 footer p { font-size:1.3rem; color:var(--muted); }
@@ -521,23 +447,8 @@ footer p { font-size:1.3rem; color:var(--muted); }
     .home-content { max-width: 100%; }
     .img-wrapper { width:28rem; height:28rem; }
     .philosophy-block { padding: 3rem; }
-    .sanskrit-text, .sanskrit-text-large { font-size: 2.2rem; }
+    .sanskrit-text { font-size: 2.2rem; }
     .services-grid, .skills-wrapper, .projects-grid { grid-template-columns:1fr; }
-    
-    /* Mobile adjustments for the final Krishna section */
-    .anchor-wrapper {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 4rem 3rem;
-        border-right: 1px solid var(--glass-border);
-        border-bottom: 4px solid var(--gold);
-        gap: 4rem;
-    }
-    .anchor-image {
-        width: 100%;
-        max-width: 32rem;
-        height: 38rem;
-    }
 }
 
 @media (max-width:768px) {

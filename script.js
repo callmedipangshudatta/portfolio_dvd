@@ -1,12 +1,12 @@
 /* ════════════════════════════════════════════
-   script.js — Krishna Peacock Wings x AI Tech
+    script.js — Krishna Peacock Wings x AI Tech
 ════════════════════════════════════════════ */
 
 /* ── 1. TYPING EFFECT ── */
 const words = [
     "Building Java Backends",
-    "Learning System Design",
-    "Shipping Projects Daily"
+    "Designing RESTful APIs",
+    "Shipping Code Daily"
 ];
 let wi = 0, ci = 0, deleting = false;
 const typingEl = document.getElementById('typingWord');
@@ -231,9 +231,6 @@ async function fetchTodayCommits() {
     if (!commitsTextEl) return;
 
     try {
-        // Optional: Replace with a direct fetch if using a personal worker/proxy, 
-        // or parse dynamically from your activity feed. 
-        // Fallback placeholder that updates live with your daily workflow:
         commitsTextEl.textContent = "Today: Active Commits";
     } catch (error) {
         commitsTextEl.textContent = "Today: Live Sync";
