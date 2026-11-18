@@ -1,15 +1,8 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap');
 
 /* =========================================
-   1. RESET & THEME VARIABLES
+   1. ROOT VARIABLES & COLOR SYSTEM
 ========================================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 :root {
   --bg: #f6f7f9;
@@ -17,15 +10,23 @@
   --alt: #eceff5;
   --text: #0f1a2e;
   --muted: #516078;
+
   --accent: #1d4ed8;
   --accent-h: #1e40af;
   --on-accent: #ffffff;
   --soft: #e7eefd;
+
   --line: #dbe2ec;
   --ok: #0f8a6a;
+
+  --blue-soft: #e8efff;
+  --green-soft: #e8f6f0;
+  --violet: #7c3aed;
+  --violet-soft: #f1eaff;
+
   --header-h: 68px;
-  --shadow: 0 8px 28px rgba(15, 26, 46, 0.06);
-  --shadow-hover: 0 16px 36px rgba(15, 26, 46, 0.11);
+  --shadow: 0 8px 28px rgba(15, 26, 46, 0.05);
+  --shadow-hover: 0 16px 36px rgba(15, 26, 46, 0.1);
 }
 
 :root[data-theme="dark"] {
@@ -34,19 +35,35 @@
   --alt: #0f1727;
   --text: #e9eef7;
   --muted: #9fadc4;
+
   --accent: #7ca4ff;
   --accent-h: #a5beff;
   --on-accent: #0b1120;
   --soft: #1a2848;
+
   --line: #243250;
   --ok: #4cc9a4;
+
+  --blue-soft: #1b2b4c;
+  --green-soft: #15352f;
+  --violet: #b49aff;
+  --violet-soft: #2b2145;
+
   --shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
   --shadow-hover: 0 16px 36px rgba(0, 0, 0, 0.28);
 }
 
 /* =========================================
-   2. GLOBAL STYLES
+   2. RESET & BASE STYLES
 ========================================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -80,6 +97,7 @@ a {
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 button {
@@ -166,7 +184,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
   transition: background 0.25s ease;
 }
@@ -209,7 +229,6 @@ nav a {
   color: var(--muted);
   font-size: 1.35rem;
   font-weight: 500;
-  transition: color 0.2s ease;
 }
 
 nav a:hover,
@@ -268,14 +287,14 @@ nav a.active {
 ========================================= */
 
 .btn {
-  min-height: 4.2rem;
+  min-height: 4.4rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  padding: 1rem 1.7rem;
+  padding: 1rem 1.8rem;
   border: 1px solid var(--line);
-  border-radius: 9px;
+  border-radius: 11px;
   background: var(--surface);
   color: var(--text);
   font-size: 1.35rem;
@@ -310,35 +329,35 @@ nav a.active {
 }
 
 .btn.soft:hover {
+  background: var(--blue-soft);
   border-color: var(--accent);
 }
 
 /* =========================================
-   5. HERO SECTION
+   5. HERO SECTION (RECRUITER ALIGNED)
 ========================================= */
 
 .hero {
-  padding: 9rem 0 10rem;
+  padding: 8.8rem 0 7.6rem;
   background: var(--bg);
 }
 
 .hero > .wrap {
   display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.85fr);
   align-items: center;
-  gap: 7rem;
+  gap: 6.4rem;
 }
 
 .status {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  width: fit-content;
   padding: 0.6rem 1.2rem;
-  margin-bottom: 2.5rem;
-  border: 1px solid rgba(15, 138, 106, 0.2);
+  margin-bottom: 2.4rem;
+  border: 1px solid color-mix(in srgb, var(--ok) 20%, transparent);
   border-radius: 50px;
-  background: rgba(15, 138, 106, 0.08);
+  background: var(--green-soft);
   color: var(--ok);
   font-size: 1.2rem;
   font-weight: 600;
@@ -350,12 +369,16 @@ nav a.active {
   height: 7px;
   border-radius: 50%;
   background: var(--ok);
-  box-shadow: 0 0 0 4px rgba(15, 138, 106, 0.1);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 15%, transparent);
 }
 
 .hero h1 {
-  max-width: 700px;
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.4rem;
+  font-size: clamp(4.6rem, 4.4vw, 7rem);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 .hero h1 span {
@@ -363,17 +386,18 @@ nav a.active {
 }
 
 .role {
-  margin-bottom: 2rem;
-  color: var(--accent);
-  font-size: 1.9rem;
-  font-weight: 600;
+  margin-bottom: 2.4rem;
+  color: var(--text);
+  font-size: 2.3rem;
+  font-weight: 650;
+  line-height: 1.4;
 }
 
 .bio {
-  max-width: 650px;
-  margin-bottom: 3rem;
+  max-width: 65ch;
+  margin-bottom: 3.2rem;
   color: var(--muted);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.85;
 }
 
@@ -387,38 +411,47 @@ nav a.active {
 ========================================= */
 
 .stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  padding: 2.5rem 0;
-  margin-bottom: 2rem;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 550px;
+  margin-top: 3rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
-.stats > div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+.stats div {
+  padding: 1.6rem 1.8rem;
+  min-width: 0;
+}
+
+.stats div + div {
+  border-left: 1px solid var(--line);
 }
 
 .stats b {
+  display: block;
   color: var(--text);
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 750;
   line-height: 1.2;
+  margin-bottom: 0.5rem;
 }
 
 .stats small {
+  display: block;
   color: var(--muted);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  white-space: nowrap;
 }
 
-.cta {
+.hero .cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 1.2rem;
+  margin-top: 3.2rem;
 }
 
 /* =========================================
@@ -426,30 +459,31 @@ nav a.active {
 ========================================= */
 
 .photo {
+  justify-self: end;
+  width: 100%;
+  max-width: 390px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  gap: 1.8rem;
 }
 
 .photo figure {
-  width: min(100%, 32rem);
-  aspect-ratio: 1;
+  width: 100%;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   position: relative;
-  border: 7px solid var(--surface);
-  border-radius: 50%;
+  border-radius: 27px;
+  border: 1px solid var(--line);
   background: var(--soft);
-  box-shadow: 0 0 0 1px var(--line), var(--shadow);
+  box-shadow: var(--shadow);
 }
 
 .photo img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
-  object-position: center;
-  position: relative;
-  z-index: 1;
+  object-position: center 15%;
 }
 
 .initials {
@@ -467,22 +501,23 @@ nav a.active {
 .photo ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.8rem;
+  gap: 1rem;
+  margin-top: 0;
+  padding: 0;
 }
 
 .photo li {
-  padding: 0.6rem 1.2rem;
+  padding: 0.9rem 1.5rem;
   border: 1px solid var(--line);
-  border-radius: 50px;
+  border-radius: 10px;
   background: var(--surface);
   color: var(--muted);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
 /* =========================================
-   8. ALTERNATE SECTIONS
+   8. ALTERNATE SECTIONS & HEADINGS
 ========================================= */
 
 .alt {
@@ -498,6 +533,7 @@ nav a.active {
 
 .head h2 {
   margin-bottom: 1.4rem;
+  color: var(--text);
 }
 
 .head p {
@@ -506,7 +542,7 @@ nav a.active {
 }
 
 /* =========================================
-   9. GRID SYSTEM
+   9. GRID SYSTEM & CARDS
 ========================================= */
 
 .grid {
@@ -522,10 +558,6 @@ nav a.active {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-/* =========================================
-   10. CARDS
-========================================= */
-
 .card {
   min-width: 0;
   padding: 2.8rem;
@@ -538,8 +570,8 @@ nav a.active {
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent);
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
   box-shadow: var(--shadow-hover);
 }
 
@@ -559,14 +591,14 @@ nav a.active {
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
-  border-radius: 12px;
-  background: var(--soft);
+  border-radius: 13px;
+  background: var(--blue-soft);
   color: var(--accent);
   font-size: 1.9rem;
 }
 
 /* =========================================
-   11. SKILL TAGS
+   10. SKILLS & TAGS
 ========================================= */
 
 .tags {
@@ -581,13 +613,21 @@ nav a.active {
   border: 1px solid var(--line);
   border-radius: 7px;
   background: var(--alt);
-  color: var(--muted);
+  color: var(--text);
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.4;
+  transition: all 0.2s ease;
+}
+
+.tags li:hover {
+  background: var(--blue-soft);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .skill h3 {
+  color: var(--accent);
   margin-bottom: 1.5rem;
 }
 
@@ -608,8 +648,26 @@ nav a.active {
 }
 
 /* =========================================
-   12. PROJECT CARDS
+   11. PROJECT CARDS (SPECIAL ACCENTS)
 ========================================= */
+
+#projects .grid.g2 > .card:first-child {
+  border-top: 3px solid #0f8a6a;
+}
+
+#projects .grid.g2 > .card:first-child .ico {
+  background: var(--green-soft);
+  color: var(--ok);
+}
+
+#projects .grid.g2 > .card:nth-child(2) {
+  border-top: 3px solid #7c3aed;
+}
+
+#projects .grid.g2 > .card:nth-child(2) .ico {
+  background: var(--violet-soft);
+  color: var(--violet);
+}
 
 .p-top {
   display: flex;
@@ -630,8 +688,9 @@ nav a.active {
   gap: 0.5rem;
   padding: 0.5rem 0.9rem;
   border-radius: 50px;
-  background: rgba(15, 138, 106, 0.08);
+  background: var(--green-soft);
   color: var(--ok);
+  border: 1px solid color-mix(in srgb, var(--ok) 18%, transparent);
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -650,13 +709,17 @@ nav a.active {
 }
 
 /* =========================================
-   13. GITHUB CONTRIBUTION GRAPH
+   12. GITHUB ACTIVITY
 ========================================= */
 
 .contrib-graph-wrapper {
   width: 100%;
   overflow-x: auto;
-  padding: 1.5rem 0;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin-top: 1.5rem;
 }
 
 .contrib-img {
@@ -668,7 +731,7 @@ nav a.active {
 }
 
 /* =========================================
-   14. CONTACT SECTION
+   13. CONTACT SECTION
 ========================================= */
 
 .contact {
@@ -723,13 +786,14 @@ nav a.active {
 }
 
 /* =========================================
-   15. FOOTER
+   14. FOOTER
 ========================================= */
 
 footer {
   padding: 2.5rem 0;
   border-top: 1px solid var(--line);
   background: var(--surface);
+  color: var(--muted);
 }
 
 footer > .wrap {
@@ -741,7 +805,6 @@ footer > .wrap {
 }
 
 footer span {
-  color: var(--muted);
   font-size: 1.3rem;
 }
 
@@ -754,7 +817,6 @@ footer span {
 .soc a {
   color: var(--muted);
   font-size: 1.8rem;
-  transition: color 0.2s ease;
 }
 
 .soc a:hover {
@@ -762,7 +824,7 @@ footer span {
 }
 
 /* =========================================
-   16. SCROLL REVEAL ANIMATION
+   15. SCROLL REVEAL ANIMATION
 ========================================= */
 
 .reveal {
@@ -782,28 +844,22 @@ footer span {
 }
 
 /* =========================================
-   17. RESPONSIVE DESIGN
+   16. RESPONSIVE DESIGN (TABLET & MOBILE)
 ========================================= */
 
-@media (max-width: 1000px) {
-  .wrap {
-    width: 90%;
+@media (max-width: 1100px) {
+  .hero .wrap {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr);
+    gap: 3.5rem;
   }
 
-  nav {
-    gap: 1.5rem;
+  .hero h1 {
+    font-size: clamp(4.2rem, 5vw, 6rem);
+    white-space: normal;
   }
 
-  nav a {
-    font-size: 1.2rem;
-  }
-
-  .hero > .wrap {
-    gap: 4rem;
-  }
-
-  .photo figure {
-    width: min(100%, 27rem);
+  .hero .photo {
+    max-width: 340px;
   }
 }
 
@@ -850,21 +906,19 @@ footer span {
     border-bottom: none;
   }
 
+  .hero {
+    padding: 6rem 0;
+  }
+
   .hero > .wrap {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
 
-  .hero {
-    padding: 7rem 0;
-  }
-
   .photo {
     grid-row: 1;
-  }
-
-  .photo figure {
-    width: 23rem;
+    justify-self: center;
+    max-width: 340px;
   }
 
   .hero > .wrap > div:first-child {
@@ -900,40 +954,38 @@ footer span {
     padding: 6.5rem 0;
   }
 
-  .wrap {
-    width: 90%;
-  }
-
   .hero {
-    padding: 5.5rem 0 6.5rem;
+    padding: 5rem 0 6rem;
   }
 
   .hero h1 {
-    font-size: 4.2rem;
+    font-size: clamp(3.8rem, 9vw, 5.2rem);
+    white-space: normal;
   }
 
   .role {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .bio {
-    font-size: 1.45rem;
+    font-size: 1.55rem;
   }
 
   .stats {
-    gap: 2rem;
+    max-width: 100%;
   }
 
-  .stats > div {
-    min-width: 9rem;
+  .stats div {
+    padding: 1.2rem 1rem;
   }
 
   .stats b {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 
-  .cta {
-    gap: 0.8rem;
+  .stats small {
+    font-size: 1.2rem;
+    white-space: normal;
   }
 
   .cta .btn {
@@ -950,16 +1002,8 @@ footer span {
     padding: 2.2rem;
   }
 
-  .head {
-    margin-bottom: 3rem;
-  }
-
   .head h2 {
     font-size: 3rem;
-  }
-
-  .p-top {
-    align-items: flex-start;
   }
 
   .row {
@@ -973,7 +1017,7 @@ footer span {
 }
 
 /* =========================================
-   18. ACCESSIBILITY & REDUCED MOTION
+   17. REDUCED MOTION ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -991,594 +1035,3 @@ footer span {
     transform: none;
   }
 }
-
-
-/* =========================================
-   DIPANGSHU DATTA — PORTFOLIO COLOUR SYSTEM
-   Royal Blue + Emerald + Violet + Amber
-========================================= */
-
-/* LIGHT MODE */
-:root {
-  --bg: #f6f7f9;
-  --surface: #ffffff;
-  --alt: #eceff5;
-  --text: #0f1a2e;
-  --muted: #516078;
-
-  --accent: #1d4ed8;
-  --accent-h: #1e40af;
-  --on-accent: #ffffff;
-  --soft: #e7eefd;
-
-  --line: #dbe2ec;
-  --ok: #0f8a6a;
-
-  --blue-soft: #e8efff;
-  --green-soft: #e8f6f0;
-  --violet: #7c3aed;
-  --violet-soft: #f1eaff;
-  --amber: #d97706;
-  --amber-soft: #fff4df;
-
-  --header-h: 68px;
-}
-
-/* DARK MODE */
-:root[data-theme="dark"] {
-  --bg: #0b1120;
-  --surface: #121a2c;
-  --alt: #0f1727;
-  --text: #e9eef7;
-  --muted: #9fadc4;
-
-  --accent: #7ca4ff;
-  --accent-h: #a5beff;
-  --on-accent: #0b1120;
-  --soft: #1a2848;
-
-  --line: #243250;
-  --ok: #4cc9a4;
-
-  --blue-soft: #1b2b4c;
-  --green-soft: #15352f;
-  --violet: #b49aff;
-  --violet-soft: #2b2145;
-  --amber: #fbbf24;
-  --amber-soft: #392c16;
-}
-
-/* PAGE BACKGROUND */
-body {
-  background: var(--bg);
-  color: var(--text);
-}
-
-::selection {
-  background: var(--accent);
-  color: var(--on-accent);
-}
-
-/* HEADER */
-header {
-  background: color-mix(in srgb, var(--surface) 92%, transparent);
-  border-bottom: 1px solid var(--line);
-}
-
-.logo {
-  background: var(--accent);
-  color: var(--on-accent);
-}
-
-nav a:hover,
-nav a.active {
-  color: var(--accent);
-}
-
-/* PRIMARY BUTTONS */
-.btn.primary {
-  background: var(--accent);
-  color: var(--on-accent);
-  border-color: var(--accent);
-}
-
-.btn.primary:hover {
-  background: var(--accent-h);
-  border-color: var(--accent-h);
-}
-
-.btn.soft {
-  background: var(--soft);
-  color: var(--accent);
-  border-color: transparent;
-}
-
-.btn.soft:hover {
-  background: var(--blue-soft);
-}
-
-/* HERO */
-.status {
-  background: var(--green-soft);
-  color: var(--ok);
-  border: 1px solid color-mix(in srgb, var(--ok) 20%, transparent);
-}
-
-.hero h1 span {
-  color: var(--accent);
-}
-
-.role {
-  color: var(--accent);
-}
-
-.stats b {
-  color: var(--accent);
-}
-
-/* SECTION HEADINGS */
-.head h2 {
-  color: var(--text);
-}
-
-.head h2 span {
-  color: var(--accent);
-}
-
-/* GENERAL CARDS */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: 0 8px 28px rgba(15, 26, 46, 0.035);
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
-  box-shadow: 0 14px 32px rgba(15, 26, 46, 0.07);
-}
-
-/* DEFAULT ICONS */
-.ico {
-  background: var(--blue-soft);
-  color: var(--accent);
-  border-radius: 13px;
-}
-
-/* PROJECT CARD — ZENFLOW */
-#projects .grid.g2 > .card:first-child {
-  border-top: 3px solid #0f8a6a;
-}
-
-#projects .grid.g2 > .card:first-child .ico {
-  background: var(--green-soft);
-  color: var(--ok);
-}
-
-#projects .grid.g2 > .card:first-child h3 {
-  color: var(--text);
-}
-
-/* PROJECT CARD — CONSOLE TRACKER */
-#projects .grid.g2 > .card:nth-child(2) {
-  border-top: 3px solid #7c3aed;
-}
-
-#projects .grid.g2 > .card:nth-child(2) .ico {
-  background: var(--violet-soft);
-  color: var(--violet);
-}
-
-/* PROJECT STATUS BADGES */
-.badge {
-  background: var(--green-soft);
-  color: var(--ok);
-  border: 1px solid color-mix(in srgb, var(--ok) 18%, transparent);
-}
-
-/* TECHNOLOGY TAGS */
-.tags li {
-  background: var(--alt);
-  color: var(--text);
-  border: 1px solid var(--line);
-  transition: all 0.2s ease;
-}
-
-.tags li:hover {
-  background: var(--blue-soft);
-  color: var(--accent);
-  border-color: var(--accent);
-}
-
-/* SKILLS CARDS */
-.skill h3 {
-  color: var(--accent);
-}
-
-/* LINKS */
-a {
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--accent);
-}
-
-/* GITHUB CONTRIBUTION IMAGE */
-.contrib-graph-wrapper {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-}
-
-/* CONTACT */
-.contact a,
-.soc a {
-  color: var(--accent);
-}
-
-/* FOOTER */
-footer {
-  background: var(--surface);
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-}
-
-/* DARK MODE CARD SHADOW */
-:root[data-theme="dark"] .card {
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-}
-
-:root[data-theme="dark"] .card:hover {
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
-}
-
-/* ACCESSIBILITY */
-@media (prefers-reduced-motion: reduce) {
-  .card,
-  .tags li,
-  .btn {
-    transition: none;
-  }
-
-  .card:hover {
-    transform: none;
-  }
-}
-
-
-/* =========================================
-   HERO — MATCH SNEHA'S PORTFOLIO LAYOUT
-========================================= */
-
-.hero {
-  padding: 64px 0 76px;
-}
-
-.hero .wrap {
-  display: grid;
-  grid-template-columns: 1.5fr 0.9fr;
-  gap: 64px;
-  align-items: center;
-}
-
-/* Heading */
-.hero h1 {
-  margin: 24px 0 14px;
-  font-size: clamp(48px, 5.2vw, 78px);
-  line-height: 1.08;
-  letter-spacing: -0.045em;
-  font-weight: 800;
-}
-
-.hero h1 span {
-  color: var(--accent);
-}
-
-/* Role */
-.hero .role {
-  font-size: clamp(19px, 2vw, 26px);
-  line-height: 1.4;
-  font-weight: 650;
-  margin-bottom: 24px;
-  color: var(--text);
-}
-
-/* Introduction */
-.hero .bio {
-  max-width: 65ch;
-  font-size: 18px;
-  line-height: 1.85;
-  color: var(--muted);
-}
-
-/* Statistics */
-.hero .stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 600px;
-  margin-top: 34px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 17px;
-  overflow: hidden;
-}
-
-.hero .stats div {
-  padding: 20px 22px;
-}
-
-.hero .stats div + div {
-  border-left: 1px solid var(--line);
-}
-
-.hero .stats b {
-  display: block;
-  font-size: 27px;
-  font-weight: 750;
-  color: var(--text);
-  margin-bottom: 5px;
-}
-
-.hero .stats small {
-  font-size: 15px;
-  color: var(--muted);
-}
-
-/* Buttons */
-.hero .cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 34px;
-}
-
-.hero .cta .btn {
-  min-height: 50px;
-  padding: 0 19px;
-  border-radius: 12px;
-}
-
-/* Profile image — rectangular like Sneha's */
-.hero .photo {
-  justify-self: end;
-  width: 100%;
-  max-width: 424px;
-}
-
-.hero .photo figure {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: 28px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--soft);
-  box-shadow: var(--shadow);
-}
-
-.hero .photo img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center 15%;
-}
-
-/* Technology labels below image */
-.hero .photo ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
-  padding: 0;
-}
-
-.hero .photo li {
-  padding: 9px 15px;
-  border-radius: 10px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-  .hero .wrap {
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 32px;
-  }
-
-  .hero h1 {
-    font-size: clamp(42px, 5vw, 58px);
-  }
-
-  .hero .photo {
-    max-width: 340px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-  .hero {
-    padding: 42px 0 56px;
-  }
-
-  .hero .wrap {
-    grid-template-columns: 1fr;
-    gap: 38px;
-  }
-
-  .hero h1 {
-    font-size: clamp(40px, 10vw, 56px);
-  }
-
-  .hero .bio {
-    font-size: 16px;
-  }
-
-  .hero .photo {
-    justify-self: center;
-    max-width: 360px;
-  }
-
-  .hero .stats {
-    max-width: 100%;
-  }
-
-  .hero .stats div {
-    padding: 15px 12px;
-  }
-
-  .hero .stats b {
-    font-size: 21px;
-  }
-
-  .hero .stats small {
-    font-size: 12px;
-  }
-}
-
-/* =========================================
-   FINAL HERO ALIGNMENT — SNEHA'S LAYOUT
-========================================= */
-
-/* Restore proper spacing below sticky header */
-.hero {
-  padding: 88px 0 76px !important;
-}
-
-/* Balanced two-column layout */
-.hero .wrap {
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.85fr) !important;
-  gap: 64px !important;
-  align-items: center !important;
-}
-
-/* Keep name on one line on desktop */
-.hero h1 {
-  font-size: clamp(46px, 4.4vw, 70px) !important;
-  line-height: 1.12 !important;
-  letter-spacing: -0.045em !important;
-  white-space: nowrap;
-}
-
-/* Match subtitle proportions */
-.hero .role {
-  font-size: 23px !important;
-  margin-bottom: 24px !important;
-}
-
-/* Match description */
-.hero .bio {
-  max-width: 65ch !important;
-  font-size: 18px !important;
-  line-height: 1.85 !important;
-}
-
-/* Compact statistics card */
-.hero .stats {
-  width: 100% !important;
-  max-width: 550px !important;
-  margin-top: 30px !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-}
-
-.hero .stats div {
-  padding: 16px 18px !important;
-  min-width: 0;
-}
-
-.hero .stats b {
-  font-size: 25px !important;
-}
-
-.hero .stats small {
-  font-size: 14px !important;
-  white-space: nowrap;
-}
-
-/* Image size like Sneha's */
-.hero .photo {
-  max-width: 390px !important;
-  width: 100% !important;
-}
-
-.hero .photo figure {
-  aspect-ratio: 4 / 5 !important;
-  border-radius: 27px !important;
-}
-
-.hero .photo ul {
-  margin-top: 18px !important;
-}
-
-/* Buttons */
-.hero .cta {
-  gap: 12px !important;
-  margin-top: 32px !important;
-}
-
-/* Tablet */
-@media (max-width: 1100px) {
-  .hero .wrap {
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr) !important;
-    gap: 35px !important;
-  }
-
-  .hero h1 {
-    font-size: clamp(42px, 5vw, 60px) !important;
-    white-space: normal;
-  }
-
-  .hero .photo {
-    max-width: 340px !important;
-  }
-
-  .hero .stats small {
-    white-space: normal;
-  }
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-  .hero {
-    padding: 42px 0 56px !important;
-  }
-
-  .hero .wrap {
-    grid-template-columns: 1fr !important;
-    gap: 36px !important;
-  }
-
-  .hero h1 {
-    font-size: clamp(39px, 10vw, 54px) !important;
-    white-space: normal;
-  }
-
-  .hero .photo {
-    max-width: 360px !important;
-    justify-self: center;
-  }
-
-  .hero .stats {
-    max-width: 100% !important;
-  }
-
-  .hero .stats div {
-    padding: 14px 10px !important;
-  }
-
-  .hero .stats b {
-    font-size: 21px !important;
-  }
-
-  .hero .stats small {
-    font-size: 12px !important;
-  }
-}
-
