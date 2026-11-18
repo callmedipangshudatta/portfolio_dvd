@@ -1443,3 +1443,142 @@ footer {
   }
 }
 
+/* =========================================
+   FINAL HERO ALIGNMENT — SNEHA'S LAYOUT
+========================================= */
+
+/* Restore proper spacing below sticky header */
+.hero {
+  padding: 88px 0 76px !important;
+}
+
+/* Balanced two-column layout */
+.hero .wrap {
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.85fr) !important;
+  gap: 64px !important;
+  align-items: center !important;
+}
+
+/* Keep name on one line on desktop */
+.hero h1 {
+  font-size: clamp(46px, 4.4vw, 70px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.045em !important;
+  white-space: nowrap;
+}
+
+/* Match subtitle proportions */
+.hero .role {
+  font-size: 23px !important;
+  margin-bottom: 24px !important;
+}
+
+/* Match description */
+.hero .bio {
+  max-width: 65ch !important;
+  font-size: 18px !important;
+  line-height: 1.85 !important;
+}
+
+/* Compact statistics card */
+.hero .stats {
+  width: 100% !important;
+  max-width: 550px !important;
+  margin-top: 30px !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.hero .stats div {
+  padding: 16px 18px !important;
+  min-width: 0;
+}
+
+.hero .stats b {
+  font-size: 25px !important;
+}
+
+.hero .stats small {
+  font-size: 14px !important;
+  white-space: nowrap;
+}
+
+/* Image size like Sneha's */
+.hero .photo {
+  max-width: 390px !important;
+  width: 100% !important;
+}
+
+.hero .photo figure {
+  aspect-ratio: 4 / 5 !important;
+  border-radius: 27px !important;
+}
+
+.hero .photo ul {
+  margin-top: 18px !important;
+}
+
+/* Buttons */
+.hero .cta {
+  gap: 12px !important;
+  margin-top: 32px !important;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .hero .wrap {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr) !important;
+    gap: 35px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 5vw, 60px) !important;
+    white-space: normal;
+  }
+
+  .hero .photo {
+    max-width: 340px !important;
+  }
+
+  .hero .stats small {
+    white-space: normal;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .hero {
+    padding: 42px 0 56px !important;
+  }
+
+  .hero .wrap {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(39px, 10vw, 54px) !important;
+    white-space: normal;
+  }
+
+  .hero .photo {
+    max-width: 360px !important;
+    justify-self: center;
+  }
+
+  .hero .stats {
+    max-width: 100% !important;
+  }
+
+  .hero .stats div {
+    padding: 14px 10px !important;
+  }
+
+  .hero .stats b {
+    font-size: 21px !important;
+  }
+
+  .hero .stats small {
+    font-size: 12px !important;
+  }
+}
+
