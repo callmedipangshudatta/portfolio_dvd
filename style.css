@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap');
 
 /* =========================================
-   1. ROOT VARIABLES & COLOR SYSTEM
+1. ROOT VARIABLES & COLOR SYSTEM
 ========================================= */
 
 :root {
@@ -54,7 +54,7 @@
 }
 
 /* =========================================
-   2. RESET & BASE STYLES
+2. RESET & BASE STYLES
 ========================================= */
 
 *,
@@ -176,7 +176,7 @@ p {
 }
 
 /* =========================================
-   3. HEADER & NAVIGATION
+3. HEADER & NAVIGATION
 ========================================= */
 
 header {
@@ -283,7 +283,7 @@ nav a.active {
 }
 
 /* =========================================
-   4. BUTTONS
+4. BUTTONS
 ========================================= */
 
 .btn {
@@ -292,14 +292,15 @@ nav a.active {
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  padding: 1rem 1.8rem;
+  padding: 1rem 1.5rem;
   border: 1px solid var(--line);
   border-radius: 11px;
   background: var(--surface);
   color: var(--text);
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 600;
   line-height: 1.2;
+  white-space: nowrap;
   transition: all 0.2s ease;
 }
 
@@ -334,7 +335,7 @@ nav a.active {
 }
 
 /* =========================================
-   5. HERO SECTION (RECRUITER ALIGNED)
+5. HERO SECTION (RECRUITER ALIGNED)
 ========================================= */
 
 .hero {
@@ -344,9 +345,9 @@ nav a.active {
 
 .hero > .wrap {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.85fr);
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 0.75fr);
   align-items: center;
-  gap: 6.4rem;
+  gap: 4.8rem;
 }
 
 .status {
@@ -407,7 +408,7 @@ nav a.active {
 }
 
 /* =========================================
-   6. HERO STATISTICS
+6. HERO STATISTICS
 ========================================= */
 
 .stats {
@@ -450,12 +451,12 @@ nav a.active {
 .hero .cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.2rem;
+  gap: 1.1rem;
   margin-top: 3.2rem;
 }
 
 /* =========================================
-   7. PROFILE PHOTO
+7. PROFILE PHOTO
 ========================================= */
 
 .photo {
@@ -517,7 +518,7 @@ nav a.active {
 }
 
 /* =========================================
-   8. ALTERNATE SECTIONS & HEADINGS
+8. ALTERNATE SECTIONS & HEADINGS
 ========================================= */
 
 .alt {
@@ -542,7 +543,7 @@ nav a.active {
 }
 
 /* =========================================
-   9. GRID SYSTEM & CARDS
+9. GRID SYSTEM & CARDS
 ========================================= */
 
 .grid {
@@ -597,8 +598,23 @@ nav a.active {
   font-size: 1.9rem;
 }
 
+.exp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+.when {
+  color: var(--muted);
+  font-size: 1.35rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 /* =========================================
-   10. SKILLS & TAGS
+10. SKILLS & TAGS
 ========================================= */
 
 .tags {
@@ -648,7 +664,7 @@ nav a.active {
 }
 
 /* =========================================
-   11. PROJECT CARDS (SPECIAL ACCENTS)
+11. PROJECT CARDS (SPECIAL ACCENTS)
 ========================================= */
 
 #projects .grid.g2 > .card:first-child {
@@ -709,7 +725,7 @@ nav a.active {
 }
 
 /* =========================================
-   12. GITHUB ACTIVITY
+12. GITHUB ACTIVITY
 ========================================= */
 
 .contrib-graph-wrapper {
@@ -731,7 +747,7 @@ nav a.active {
 }
 
 /* =========================================
-   13. CONTACT SECTION
+13. CONTACT SECTION
 ========================================= */
 
 .contact {
@@ -786,7 +802,7 @@ nav a.active {
 }
 
 /* =========================================
-   14. FOOTER
+14. FOOTER
 ========================================= */
 
 footer {
@@ -824,7 +840,7 @@ footer span {
 }
 
 /* =========================================
-   15. SCROLL REVEAL ANIMATION
+15. SCROLL REVEAL ANIMATION
 ========================================= */
 
 .reveal {
@@ -844,7 +860,7 @@ footer span {
 }
 
 /* =========================================
-   16. RESPONSIVE DESIGN (TABLET & MOBILE)
+16. RESPONSIVE DESIGN (TABLET & MOBILE)
 ========================================= */
 
 @media (max-width: 1100px) {
@@ -992,6 +1008,10 @@ footer span {
     flex: 1 1 42%;
   }
 
+  .when {
+    white-space: normal;
+  }
+
   .g3,
   .g2,
   .contact {
@@ -1017,7 +1037,7 @@ footer span {
 }
 
 /* =========================================
-   17. REDUCED MOTION ACCESSIBILITY
+17. REDUCED MOTION ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
